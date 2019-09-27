@@ -1,0 +1,14 @@
+ html{
+	margin:0px;
+}
+
+.slider{
+	background:url(../media/bg_slider.jpg);
+	background-position:center;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+.overlay{
+	background-color:rgba(0,0,0,0.35);
+}
