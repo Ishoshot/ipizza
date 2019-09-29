@@ -2,9 +2,12 @@
 
 @section('content')
     
-    <div class="row mt-5">
+    <div class="container-fluid">
+    
+    <a href="/home" class="btn btn-md btn-primary">Manage Pizzas</a>
+    <a href="/category" class="btn btn-md btn-primary">Manage Categories</a>
 
-        <div class="container mt-3 mb-5">
+        <div class="container mt-5 mb-5">
         
         <form action="/add" method="POST" enctype="multipart/form-data">
         @csrf
@@ -12,12 +15,12 @@
 
         <label for="name" class="col-md-2 col-form-label">{{ __('Name') }}</label>
 
-        <input id="name" 
+        <input id="name"
         name="name"
         type="text" 
         class="form-control @error('name') is-invalid @enderror col-md-10"
         autocomplete="name"
-        autofocus rows="5" />
+        autofocus autocomplete="off" />
 
         @error('name')
         <span class="invalid-feedback" role="alert">
@@ -37,7 +40,7 @@
         type="text" 
         class="form-control @error('amount') is-invalid @enderror col-md-10"
         autocomplete="amount"
-        autofocus rows="5" />
+        autofocus autocomplete="off" />
 
         @error('amount')
         <span class="invalid-feedback" role="alert">
@@ -77,8 +80,7 @@
         name="description"
         class="form-control @error('description') is-invalid @enderror col-md-10"
         autocomplete="description"
-        autofocus rows="5">
-        </textarea>
+        autofocus rows="5"></textarea>
 
         @error('description')
         <span class="invalid-feedback" role="alert">
@@ -111,7 +113,7 @@
             </div>
 
             <div>
-                <button class="btn btn-primary">Create Post</button>
+                <button class="btn btn-primary">Add Pizza</button>
             </div>
         
         </div>

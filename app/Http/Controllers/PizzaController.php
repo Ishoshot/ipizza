@@ -11,6 +11,7 @@ use App\Http\Resources\PizzaResource;
 
 class PizzaController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +19,7 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        $pizzas = Pizza::all();
+        $pizzas = Pizza::latest()->get();
 
         return PizzaResource::collection($pizzas);
     }
@@ -30,9 +31,9 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        $categories = Category::with('pizzas')->orderBy('title', 'asc')->get();
+        // $categories = Category::with('pizzas')->orderBy('title', 'asc')->get();
 
-        return view('create', compact('categories'));
+        // return view('create', compact('categories'));
     }
 
     /**
@@ -43,33 +44,33 @@ class PizzaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'name' => ['required','min:5'],
-            'description' => ['required','min:15'],
-            'category' => 'required',
-            'amount' => 'required',
-            'image' => ['required','image','max:1999'],
-        ]);
+        // $data = request()->validate([
+        //     'name' => ['required','min:5'],
+        //     'description' => ['required','min:15'],
+        //     'category' => 'required',
+        //     'amount' => 'required',
+        //     'image' => ['required','image','max:1999'],
+        // ]);
 
-        $imagePath = request('image')->store('pizza','public');
+        // $imagePath = request('image')->store('pizza','public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600,300);
+        // $image = Image::make(public_path("storage/{$imagePath}"))->fit(600,300);
         
-        $image->save();
+        // $image->save();
 
-        Pizza::create([
-            'name' => $data['name'],
-            'description' => $data['description'],
-            'category_id' => $data['category'],
-            'amount' => $data['amount'],
-            'image' => $imagePath,
-        ]);
+        // Pizza::create([
+        //     'name' => $data['name'],
+        //     'description' => $data['description'],
+        //     'category_id' => $data['category'],
+        //     'amount' => $data['amount'],
+        //     'image' => $imagePath,
+        // ]);
 
-        // $authId = auth()->user()->id;
+        // // $authId = auth()->user()->id;
 
-        // session()->flash('status','You successfully created a post');
+        // // session()->flash('status','You successfully created a post');
 
-        return back();
+        // return back();
     }
 
     /**

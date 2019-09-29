@@ -17,7 +17,7 @@ class Catalogue extends Component{
 
   render(){ 
       return (
-        <div>
+        <div className="">
           <div className="row container-fluid p-xl-5 p-lg-5 md:tw-p-10 mt-3 m-0">
             <Pizzas pizzas={this.state.pizzas} />
           </div>

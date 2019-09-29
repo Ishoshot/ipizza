@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 class Contact extends Component{
     render(){ 
         return (
-            <div className="container-fluid mt-5">
+            <div className="container-fluid mt-5 mb-5">
 
 		        <div className="row justify-content-center">
 		            <div className="col-md-7">
@@ -51,7 +51,7 @@ class Contact extends Component{
 export default Contact;
 
 const FormBg = {
-	backgroundColor:'#fff',
+	backgroundColor:'rgba(0,0,0,0.03)',
 	padding:'7%',
 	textAlign: 'center'
 }

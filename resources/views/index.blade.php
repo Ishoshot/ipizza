@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pizza')
 
 @section('content')
     
@@ -20,6 +20,10 @@
 
     <div id="contact"> 
         <Contact /> 
+    </div>
+
+    <div id="footer"> 
+        <Footer /> 
     </div>
 
 @endsection

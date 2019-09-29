@@ -12,14 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-
-
-Route::get('/add/create', 'PizzaController@create');
-
-Route::post('/add', 'PizzaController@store');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/add/pizza', 'ResourceController@create');
+
+Route::get('/category', 'ResourceController@category');
+
+Route::post('/add/category', 'ResourceController@add');
+
+Route::post('/add', 'ResourceController@store');
+
+Route::delete('/category/{id}', 'ResourceController@destroy');
+
+Route::delete('/pizza/{id}', 'ResourceController@pizzaDelete');
+
+Route::get('/home', 'ResourceController@index')->name('home');

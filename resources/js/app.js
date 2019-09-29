@@ -15,6 +15,8 @@ require('./bootstrap');
 require('./components/Navbar');
 require('./components/Contact');
 require('./components/Slider');
+require('./components/OrderModal');
+require('./components/Footer');
 require('./components/Schedule');
 require('./components/Catalogue');
 require('./components/Pizzas');

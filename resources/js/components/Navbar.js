@@ -22,14 +22,12 @@ class NavbarComponent extends Component{
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                   <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto">
-                      <Nav.Link className="tw-mr-5 xl:tw-ml-5" href="#features">Features</Nav.Link>
-                      <Nav.Link className="tw-mr-5 xl:tw-ml-5" href="#pricing">Pricing</Nav.Link>
+                      <Nav.Link className="tw-mr-5 xl:tw-ml-5" href="/">Home</Nav.Link>
+                      <Nav.Link className="tw-mr-5 xl:tw-ml-5" href="#catalogue">Catalogue</Nav.Link>
                     </Nav>
                     <Nav>
-                      <Nav.Link className="tw-mr-5 xl:tw-ml-5" href="#deets">More deets</Nav.Link>
-                      <Nav.Link className="tw-mr-20 xl:tw-ml-5" eventKey={2} href="#memes">
-                        Dank memes
-                      </Nav.Link>
+                      <Nav.Link className="tw-mr-5 xl:tw-ml-5" href="#schedule">Schedule</Nav.Link>
+                      <Nav.Link className="tw-mr-20 xl:tw-ml-5" href="#contact">Contact</Nav.Link>
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>
