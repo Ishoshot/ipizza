@@ -63,7 +63,7 @@ class ResourceController extends Controller
             'description' => ['required', 'min:15'],
             'category' => 'required',
             'amount' => 'required',
-            'image' => ['', 'image', 'max:1999'],
+            // 'image' => ['', 'image', 'max:1999'],
         ]);
 
         // $imagePath = request('image')->store('pizza', 'public');
