@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    
+
     <div class="container-fluid">
-    
+
     <a href="/home" class="btn btn-md btn-primary">Manage Pizzas</a>
     <a href="/category" class="btn btn-md btn-primary">Manage Categories</a>
 
         <div class="container mt-5 mb-5">
-        
+
         <form action="/add" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
@@ -17,7 +17,7 @@
 
         <input id="name"
         name="name"
-        type="text" 
+        type="text"
         class="form-control @error('name') is-invalid @enderror col-md-10"
         autocomplete="name"
         autofocus autocomplete="off" />
@@ -35,9 +35,9 @@
 
         <label for="amount" class="col-md-2 col-form-label">{{ __('Amount') }}</label>
 
-        <input id="amount" 
+        <input id="amount"
         name="amount"
-        type="text" 
+        type="text"
         class="form-control @error('amount') is-invalid @enderror col-md-10"
         autocomplete="amount"
         autofocus autocomplete="off" />
@@ -55,7 +55,7 @@
 
         <label for="category" class="col-md-2 col-form-label">{{ __('Category') }}</label>
 
-        <select name="category" id="category" 
+        <select name="category" id="category"
         class="form-control @error('category') is-invalid @enderror col-md-10">
             <option value="">~ Select a Category ~</option>
             @foreach ($categories as $category)
@@ -71,12 +71,12 @@
 
         </div>
 
-        
+
         <div class="form-group row">
 
         <label for="description" class="col-md-2 col-form-label">{{ __('Description') }}</label>
 
-        <textarea id="description" 
+        <textarea id="description"
         name="description"
         class="form-control @error('description') is-invalid @enderror col-md-10"
         autocomplete="description"
@@ -107,7 +107,7 @@
 
 
         <div class="d-flex row pt-4 justify-content-between">
-        
+
             <div>
                 <button class="btn btn-danger" type="reset">Reset</button>
             </div>
@@ -115,7 +115,7 @@
             <div>
                 <button class="btn btn-primary">Add Pizza</button>
             </div>
-        
+
         </div>
 
 </form>

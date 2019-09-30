@@ -6,9 +6,9 @@
 
     <a href="/home" class="btn btn-md btn-primary">Manage Pizzas</a>
     <a href="/add/pizza" class="btn btn-md btn-primary">Add Pizza</a>
-	
+
 <div class="row justify-content-center">
-	
+
 
 	<div class="col-md-12">
 	    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
@@ -51,7 +51,7 @@
 	                        @enderror
 	                    </div>
 
-	                    
+
 	                    <div class="modal-footer d-flex row pt-4 justify-content-between">
 	                        <div class="ml-3">
 	                            <button class="btn btn-primary">Add Category</button>
@@ -128,7 +128,7 @@
 	        <div class="col-12 d-flex">
 	              {{$categories->links() }}
 	        </div>
-	    
+
 	    </div>
 
 	</div>
