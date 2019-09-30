@@ -58,26 +58,27 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
-         $data = request()->validate([
-            'name' => ['required','min:5'],
-            'description' => ['required','min:15'],
+        $data = request()->validate([
+            'name' => ['required', 'min:5'],
+            'description' => ['required', 'min:15'],
             'category' => 'required',
             'amount' => 'required',
-            'image' => ['required','image','max:1999'],
+            'image' => ['', 'image', 'max:1999'],
         ]);
 
-        $imagePath = request('image')->store('pizza','public');
+        // $imagePath = request('image')->store('pizza', 'public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600,300);
-        
-        $image->save();
+        // $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 300);
+
+        // $image->save();
 
         Pizza::create([
             'name' => $data['name'],
             'description' => $data['description'],
             'category_id' => $data['category'],
             'amount' => $data['amount'],
-            'image' => $imagePath,
+            // 'image' => $imagePath,
+            'image' => 'Image',
         ]);
 
         // $authId = auth()->user()->id;
@@ -95,8 +96,8 @@ class ResourceController extends Controller
      */
     public function add(Request $request)
     {
-         $data = request()->validate([
-            'title' => ['required','min:4'],
+        $data = request()->validate([
+            'title' => ['required', 'min:4'],
         ]);
 
         Category::create([
@@ -151,18 +152,18 @@ class ResourceController extends Controller
     public function destroy($id)
     {
         Category::find($id)->delete($id);
-        
+
         return response()->json([
-         'success' => 'Record deleted successfully!'
+            'success' => 'Record deleted successfully!'
         ]);
     }
 
     public function pizzaDelete($id)
     {
         Pizza::find($id)->delete($id);
-        
+
         return response()->json([
-         'success' => 'Record deleted successfully!'
+            'success' => 'Record deleted successfully!'
         ]);
     }
 }
