@@ -11,7 +11,7 @@ class Catalogue extends Component{
   }
 
   componentDidMount(){
-    axios.get('http://127.0.0.1:8000/api/pizzas')
+    axios.get('/api/pizzas')
       .then(res => this.setState({ pizzas:res.data.data }));
   }
 
