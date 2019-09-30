@@ -81379,7 +81379,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/pizzas').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/pizzas').then(function (res) {
         return _this2.setState({
           pizzas: res.data.data
         });
@@ -81394,7 +81394,7 @@ function (_Component) {
         className: "row container-fluid p-xl-5 p-lg-5 md:tw-p-10 mt-3 m-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pizzas__WEBPACK_IMPORTED_MODULE_3__["default"], {
         pizzas: this.state.pizzas
-      })));
+      }), " "), " ");
     }
   }]);
 
