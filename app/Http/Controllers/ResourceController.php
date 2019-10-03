@@ -67,6 +67,10 @@ class ResourceController extends Controller
             'image' => ['required', 'image', 'max:2999'],
         ]);
 
+        $cat = Category::findorfail($data['category']);
+
+        $catName = $cat->title;
+
         if($request->hasFile('image')) {
  
         //get filename with extension
@@ -92,6 +96,7 @@ class ResourceController extends Controller
             'category_id' => $data['category'],
             'amount' => $data['amount'],
             'image' => $filenametosave,
+            'catName' => $catName,
         ]);
 
         return redirect('/home');

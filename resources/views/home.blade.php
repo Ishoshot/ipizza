@@ -30,7 +30,7 @@
                     $pizzaImage = Storage::disk('s3')->url($pizza->image);
                 @endphp
                 
-                <img src="{{$pizzaImage}}" class="card-img-top" alt="">
+                <img src="{{$pizzaImage}}" class="card-img-top" alt="Pizza Image">
                 
                 <div class="card-body">
                     <span class="float-right tag">€ {{$pizza->amount}}</span>

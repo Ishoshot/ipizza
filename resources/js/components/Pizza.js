@@ -32,7 +32,7 @@ class Pizza extends Component{
 				  <Card.Body>
 				    <span className="float-right tag"> € { this.props.pizza.amount }</span>
 				    <Card.Title className="font-weight-bold text-uppercase">{ this.props.pizza.name }</Card.Title>
-				    <Card.Title>{ this.props.pizza.category_id }</Card.Title>
+				    <span className="font-weight-bold"><i>{ this.props.pizza.catName }</i></span>
 				    <Card.Text className="text-justify">{ this.props.pizza.description }</Card.Text>
 				    <ButtonToolbar>
 				      <Button variant="secondary" className="btn-sm" onClick={this.placeOrder}
