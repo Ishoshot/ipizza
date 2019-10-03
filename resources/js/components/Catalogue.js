@@ -24,13 +24,11 @@ class Catalogue extends Component {
     
         if (this.state.pizzas.length > 0) {
             return ( 
-                <div className="">
-                    <div className="row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0" >
-                        <Pizzas pizzas = {
-                            this.state.pizzas
-                        }
-                        /> 
-                    </div>
+                <div className="row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0" >
+                    <Pizzas pizzas = {
+                        this.state.pizzas
+                    }
+                    /> 
                 </div>
             );
         }
