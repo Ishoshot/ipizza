@@ -36,7 +36,7 @@ class Catalogue extends Component {
         }
         else{
             return (
-                <div className="container-fluid p-0 mt-3">
+                <div className="container-fluid p-0 mt-5">
                     <Alert variant="danger" className="rounded-0 mb-0">
                         <h5 className="m-0">
                             <marquee>

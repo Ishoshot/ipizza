@@ -5,6 +5,18 @@
     
     <a href="/add/pizza" class="btn btn-md btn-primary">Add New Pizza</a>
     <a href="/category" class="btn btn-md btn-primary">Manage Categories</a>
+
+
+    @if(count($pizzas) == 0)
+    <div class="card-body" id="content">
+        <div class="alert  alert-warning alert-dismissible fade show" role="alert">
+            <i class="fa fa-volume-up"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>There are no pizzas yet !!! Newly added pizzas will appear here.
+        </div>
+    </div>
+    @endif
     
     <div class="row p-xl-5 p-lg-5 md:tw-p-10 m-0">
        
