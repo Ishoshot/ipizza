@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- ===========================FAVICO ICON============================================= -->
+    <link rel="shortcut icon" href="/media/logo.png" type="image/x-icon">
+    <!-- =========================FAVICO ICO ENDS=========================================== -->
+
+    <meta name="theme-color" content="#db3a3a">
+    <meta name="keywords" 
+    content="iPizza, Pizza, Pizza Application,Ishola Oluwatobi,">
+
+    <meta name="description" 
+    content="This is iPizza, A pizza ordering system created with laravel, react, tailwind et al. Developed with love by Ishola Oluwatobi.0 @ TobbyWeb, Co-Founder of CreativeDev's. Oluwatobi is a young innovative Full Stak Web developer.">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
