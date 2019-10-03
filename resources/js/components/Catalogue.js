@@ -1,6 +1,7 @@
 import React, {
     Component
 } from 'react';
+import { Alert } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
@@ -19,19 +20,34 @@ class Catalogue extends Component {
             }));
     }
 
-    render() {
-        return ( <
-            div className = "" >
-            <
-            div className = "row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0" >
-            <
-            Pizzas pizzas = {
-                this.state.pizzas
-            }
-            /> <
-            /div> <
-            /div>
-        );
+    render() { 
+    
+        if (this.state.pizzas.length > 0) {
+            return ( 
+                <div className="">
+                    <div className="row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0" >
+                        <Pizzas pizzas = {
+                            this.state.pizzas
+                        }
+                        /> 
+                    </div>
+                </div>
+            );
+        }
+        else{
+            return (
+                <div className="container-fluid p-0 mt-3">
+                    <Alert variant="danger" className="rounded-0 mb-0">
+                        <h5 className="m-0">
+                            <marquee>
+                                Oops! We are currently out of stock! Please contact our customer care @ 08105575363 for more info.
+                            </marquee>
+                        </h5>
+                    </Alert>
+                </div>
+            );
+        }
+    
     }
 }
 

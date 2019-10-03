@@ -81319,11 +81319,12 @@ if (token) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Pizzas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Pizzas */ "./resources/js/components/Pizzas.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Pizzas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Pizzas */ "./resources/js/components/Pizzas.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -81343,6 +81344,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -81379,7 +81381,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/pizzas').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/pizzas').then(function (res) {
         return _this2.setState({
           pizzas: res.data.data
         });
@@ -81388,13 +81390,24 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pizzas__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        pizzas: this.state.pizzas
-      }), " "), " ");
+      if (this.state.pizzas.length > 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: ""
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pizzas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          pizzas: this.state.pizzas
+        })));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "container-fluid p-0 mt-3"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Alert"], {
+          variant: "danger",
+          className: "rounded-0 mb-0"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+          className: "m-0"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("marquee", null, "Oops! We are currently out of stock! Please contact our customer care @ 08105575363 for more info."))));
+      }
     }
   }]);
 
@@ -81404,7 +81417,7 @@ function (_Component) {
 /* harmony default export */ __webpack_exports__["default"] = (Catalogue);
 
 if (document.getElementById('catalogue')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Catalogue, null), document.getElementById('catalogue'));
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Catalogue, null), document.getElementById('catalogue'));
 }
 
 /***/ }),
