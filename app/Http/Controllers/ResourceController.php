@@ -6,7 +6,7 @@ use App\Pizza;
 use App\Category;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
+// use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
 class ResourceController extends Controller
