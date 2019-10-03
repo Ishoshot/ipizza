@@ -81391,7 +81391,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row container-fluid p-xl-5 p-lg-5 md:tw-p-10 mt-3 m-0"
+        className: "row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Pizzas__WEBPACK_IMPORTED_MODULE_3__["default"], {
         pizzas: this.state.pizzas
       }), " "), " ");

@@ -23,7 +23,7 @@ class Catalogue extends Component {
         return ( <
             div className = "" >
             <
-            div className = "row container-fluid p-xl-5 p-lg-5 md:tw-p-10 mt-3 m-0" >
+            div className = "row container-fluid p-xl-3 p-lg-3 md:tw-p-10 mt-3 m-0" >
             <
             Pizzas pizzas = {
                 this.state.pizzas
