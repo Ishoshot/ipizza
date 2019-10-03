@@ -63,21 +63,21 @@ class ResourceController extends Controller
             'description' => ['required', 'min:15'],
             'category' => 'required',
             'amount' => 'required',
-            // 'image' => ['required', 'image', 'max:1999'],
+            'image' => ['required', 'image', 'max:1999'],
         ]);
 
-        // $imagePath = request('image')->store('pizza', 'public');
+        $imagePath = request('image')->store('pizza', 'public');
 
-        // $image = Image::make()->fit(600, 300);
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 300);
 
-        // $image->save();
+        $image->save();
 
         Pizza::create([
             'name' => $data['name'],
             'description' => $data['description'],
             'category_id' => $data['category'],
             'amount' => $data['amount'],
-            'image' => 'Image here',
+            'image' => $imagePath,
         ]);
 
         // $authId = auth()->user()->id;

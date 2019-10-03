@@ -28,10 +28,10 @@ class Pizza extends Component{
    	const {loading} = this.state;
         return (
             <div className="col-md-3 p-2 mt-3">
-				<Card className="tw-bg-gray-100">
+				<Card className="tw-bg-gray-100" height="100">
 				  <Card.Img variant="top" src={`/storage/${this.props.pizza.image}`} />
 				  <Card.Body>
-				    <span className="float-right tag">$ { this.props.pizza.amount }</span>
+				    <span className="float-right tag"> { this.props.pizza.amount }</span>
 				    <Card.Title className="font-weight-bold text-uppercase">{ this.props.pizza.name }</Card.Title>
 				    <Card.Title>{ this.props.pizza.category_id }</Card.Title>
 				    <Card.Text className="text-justify">{ this.props.pizza.description }</Card.Text>

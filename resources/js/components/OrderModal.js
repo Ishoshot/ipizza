@@ -63,8 +63,8 @@ class OrderModal extends Component{
                       <div className="col-md-9">
                           <p><b>Item Name:</b> {this.props.order.name} </p>
                           <p><b>Item Description:</b> {this.props.order.description} </p>
-                          <p><b>Item Price/Quantity:</b> $ {this.props.order.amount} </p>
-                          <p><b>Total Price:</b> $ {this.state.totalAmount} </p> 
+                          <p><b>Item Price/Quantity:</b> € {this.props.order.amount} </p>
+                          <p><b>Total Price:</b> € {this.state.totalAmount} </p> 
                       </div>
 
                       <div className="col-md-3">
@@ -87,7 +87,7 @@ class OrderModal extends Component{
                   image="/media/logo.png"
                   panelLabel="Finalize Payment"
                   amount={this.state.totalAmount * 100}
-                  currency="USD"
+                  currency="EUR"
                   locale="en"
                   shippingAddress={true}
                   billingAddress={true}>
