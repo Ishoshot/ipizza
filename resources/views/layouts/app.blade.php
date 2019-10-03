@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/media/logo.png" type="image/x-icon">
     <!-- =========================FAVICO ICO ENDS=========================================== -->
 
-    <meta name="theme-color" content="#db3a3a">
+    <meta name="theme-color" content="#000000">
     <meta name="keywords" 
     content="iPizza, Pizza, Pizza Application,Ishola Oluwatobi,">
 
