@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/media/logo.png" type="image/x-icon">
     <!-- =========================FAVICO ICO ENDS=========================================== -->
 
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#db3a3a">
     <meta name="keywords" 
     content="iPizza, Pizza, Pizza Application,Ishola Oluwatobi,">
 
@@ -18,7 +18,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'iPizza -- Adminify') }}</title>
+    <title>{{ config('app.name', 'iPizza - Adminify') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
