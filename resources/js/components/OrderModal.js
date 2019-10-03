@@ -68,7 +68,7 @@ class OrderModal extends Component{
                       </div>
 
                       <div className="col-md-3">
-                          <Card.Img variant="top" src={`/storage/${this.props.order.image}`} />
+                          <Card.Img variant="top" src={`http://s3-eu-west-2.amazonaws.com/ipizza/${this.props.order.image}`} />
                           <p className="mt-2"><b>Quantity:</b> {this.state.quantity} <br/>
                             <button className="btn btn-sm btn-outline-success"
                             onClick={this.IncrementQuan}> + </button> <button className="btn btn-sm btn-outline-danger"

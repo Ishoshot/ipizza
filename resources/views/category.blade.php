@@ -152,14 +152,8 @@
                     "_token": token,
                 },
 
-                success: function (data)
-                {
-                    if (data.success)
-                    {
-                        setInterval(function(){
-                            $('div#content').load(location.href + ' #content');
-                        }, 1000);
-                    }
+                success: function(data) {
+                    location.reload(); 
                 }
             });
         });

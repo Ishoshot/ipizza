@@ -7,6 +7,7 @@ use App\Category;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ResourceController extends Controller
 {
@@ -63,33 +64,40 @@ class ResourceController extends Controller
             'description' => ['required', 'min:15'],
             'category' => 'required',
             'amount' => 'required',
-            'image' => ['required', 'image', 'max:1999'],
+            'image' => ['required', 'image', 'max:2999'],
         ]);
 
-        $imagePath = request('image')->store('pizza', 'public');
+        if($request->hasFile('image')) {
+ 
+        //get filename with extension
+        $filenamewithext = $request->file('image')->getClientOriginalName();
+        
+        //get filename without extension
+        $filename = pathinfo($filenamewithext, PATHINFO_FILENAME);
+ 
+        //get file extension
+        $extension = $request->file('image')->getClientOriginalExtension();
+ 
+        //filename to store
+        $filenametosave = $filename.'_'.time().'.'.$extension;
+ 
+        //Upload File to s3
+        Storage::disk('s3')->put($filenametosave, fopen($request->file('image'), 'r+'), 'public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(600, 300);
-
-        $image->save();
+        }
 
         Pizza::create([
             'name' => $data['name'],
             'description' => $data['description'],
             'category_id' => $data['category'],
             'amount' => $data['amount'],
-            'image' => $imagePath,
+            'image' => $filenametosave,
         ]);
-
-        // $authId = auth()->user()->id;
-
-        // session()->flash('status','You successfully created a post');
 
         return redirect('/home');
 
-        // return back();
     }
-
-    /**
+        /**
      *
      * @return \Illuminate\Http\Response
      */

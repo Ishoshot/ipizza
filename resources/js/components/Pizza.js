@@ -14,7 +14,6 @@ class Pizza extends Component{
   	}
 
   	placeOrder =() => {
-    	// console.log(this.props.pizza);
     	this.setState({loading: true});
     	setTimeout(()=>{
     		this.setState({orderItem: this.props.pizza});	
@@ -29,7 +28,7 @@ class Pizza extends Component{
         return (
             <div className="col-md-3 p-2 mt-3">
 				<Card className="tw-bg-gray-100" height="100">
-				  <Card.Img variant="top" src={`/storage/${this.props.pizza.image}`} />
+				  <Card.Img variant="top" src={`http://s3-eu-west-2.amazonaws.com/ipizza/${this.props.pizza.image}`} />
 				  <Card.Body>
 				    <span className="float-right tag"> € { this.props.pizza.amount }</span>
 				    <Card.Title className="font-weight-bold text-uppercase">{ this.props.pizza.name }</Card.Title>

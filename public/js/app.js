@@ -81811,7 +81811,7 @@ function (_Component) {
         className: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
         variant: "top",
-        src: "/storage/".concat(this.props.order.image)
+        src: "http://s3-eu-west-2.amazonaws.com/ipizza/".concat(this.props.order.image)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "mt-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Quantity:"), " ", this.state.quantity, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -81931,7 +81931,6 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "placeOrder", function () {
-      // console.log(this.props.pizza);
       _this.setState({
         loading: true
       });
@@ -81973,7 +81972,7 @@ function (_Component) {
         height: "100"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Img, {
         variant: "top",
-        src: "/storage/".concat(this.props.pizza.image)
+        src: "http://s3-eu-west-2.amazonaws.com/ipizza/".concat(this.props.pizza.image)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "float-right tag"
       }, " \u20AC ", this.props.pizza.amount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Card"].Title, {

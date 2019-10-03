@@ -13,11 +13,15 @@
             <div class="col-md-3 mt-3 p-2">
               
               <div class="card">
+
+                @php
+                    $pizzaImage = Storage::disk('s3')->url($pizza->image);
+                @endphp
                 
-                <img src="/storage/{{$pizza->image}}" class="card-img-top" alt="">
+                <img src="{{$pizzaImage}}" class="card-img-top" alt="">
                 
                 <div class="card-body">
-                    <span class="float-right tag">$ {{$pizza->amount}}</span>
+                    <span class="float-right tag">€ {{$pizza->amount}}</span>
                     <h4 class="card-title">{{$pizza->name}}</h4>
                     <span class="font-weight-bold">{{$pizza->category->title}}</span>
                     <p class="card-text">{{$pizza->description}}</p>
@@ -53,14 +57,8 @@
                     "_token": token,
                 },
 
-                success: function (data)
-                {
-                    if (data.success)
-                    {
-                        setInterval(function(){
-                            $('div#content').load(location.href + ' #content');
-                        }, 1000);
-                    }
+                success: function(data) {
+                    location.reload(); 
                 }
             });
         });
