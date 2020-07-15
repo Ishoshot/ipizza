@@ -1,3 +1,3 @@
 # ipizza
 
-Developed with love-
+A pizza ordering syterm
