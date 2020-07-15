@@ -1,3 +1,3 @@
 # ipizza
 
-A pizza ordering syterm
+A pizza ordering system.
